@@ -56,7 +56,8 @@ static int create_files(struct kernfs_node *parent, struct kobject *kobj,
 					continue;
 			}
 			if (strstr((*attr)->name, "max_freqs")) {
-				mode = 0664；
+				// Corrected line: replaced full-width semicolon with standard semicolon
+				mode = 0664;
 			}
 			WARN(mode & ~(SYSFS_PREALLOC | 0664),
 			     "Attribute %s: Invalid permissions 0%o\n",
