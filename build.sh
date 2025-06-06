@@ -12,14 +12,13 @@ export PATH=$TOOLCHAIN/gcc/linux-x86/host/x86_64-linux-glibc2.17-4.8/bin:$PATH
 
 echo $PATH
 
+LTO=full
 
 TARGET_DEFCONFIG=${1:-taro_gki_defconfig}
 
 cd "$(dirname "$0")"
 
 LOCALVERSION=-android12-Kokuban-Bronya-HYD9-LKM
-
-LTO=full
 
 if [ "$LTO" == "thin" ]; then
   LOCALVERSION+="-thin"
@@ -61,11 +60,13 @@ name=Z4_kernel_`cat include/config/kernel.release`_`date '+%Y_%m_%d'`
 cd AnyKernel3
 zip -r ${name}.zip * -x *.zip
 cd ..
-cp arch/arm64/boot/Image AnyKernel3/tools/kernel
 cd AnyKernel3/tools
 chmod +x libmagiskboot.so
 lz4 boot.img.lz4
-./libmagiskboot.so repack boot.img ${name}.img 
+./libmagiskboot.so unpack boot.img ${name}.img
+rm -f ./kernel
+cp ../../arch/arm64/boot/Image ./kernel
+./libmagiskboot.so repack boot.img ${name}.img
 echo "boot.img output to $(realpath $name).img"
 cd ..
 cd ..
