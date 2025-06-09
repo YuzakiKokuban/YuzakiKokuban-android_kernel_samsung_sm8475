@@ -1,4 +1,4 @@
-# Kokuban 内核适用于三星 Galaxy Z4 系列（SM-F721X / F956X）
+# Kokuban 内核适用于三星 Galaxy Z4 系列（SM-F721X / F936X）
 
 基于三星官方开源版本构建的 Galaxy Z4 系列自定义内核。  
 支持 One UI 7.0 稳定版和 KernelSU 集成。
@@ -104,7 +104,7 @@ KernelSU-Next 不是 KernelSU 官方开发的，也不是官方认可的改进�
 
 ---
 
-# Kokuban Kernel for Samsung Galaxy Z4 Series (SM-F721X / F956X)
+# Kokuban Kernel for Samsung Galaxy Z4 Series (SM-F721X / F936X)
 
 Custom kernel for the Samsung Galaxy Z4 series, built from Samsung's official open-source release.  
 Supports One UI 7.0 Stable and KernelSU integration.
