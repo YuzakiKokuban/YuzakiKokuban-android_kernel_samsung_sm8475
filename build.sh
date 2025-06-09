@@ -18,7 +18,7 @@ TARGET_DEFCONFIG=${1:-taro_gki_defconfig}
 
 cd "$(dirname "$0")"
 
-LOCALVERSION=-android12-Kokuban-Bronya-HYD9-LKM
+LOCALVERSION=-android12-Kokuban-Bronya-HYD9-MKSU
 
 if [ "$LTO" == "thin" ]; then
   LOCALVERSION+="-thin"
